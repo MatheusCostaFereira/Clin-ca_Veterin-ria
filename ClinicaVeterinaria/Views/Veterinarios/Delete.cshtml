@@ -1,0 +1,62 @@
+﻿@model ClinicaVeterinaria.Models.Veterinario
+
+@{
+    ViewData["Title"] = "Excluir";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3 class="alert-danger">Você tem certeza que deseja excluir?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CRMV)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CRMV)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Rg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Contato)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Contato)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Especialização)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Especialização)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

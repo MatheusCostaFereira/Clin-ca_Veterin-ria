@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Consulta>
+
+@{
+    ViewData["Title"] = "Histórico";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<br />
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(model => model.Data_Consulta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pet.Proprietario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Veterinario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data_Consulta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pet.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pet.Proprietario.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Veterinario.Nome)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form asp-action="Delete">
+    <a asp-action="Index">Back to List</a>
+</form>
